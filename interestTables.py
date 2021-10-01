@@ -1,5 +1,6 @@
-from engecon import cmpAmtFact, presWorthFact,uniSeriesCmpAmtFact,sinkFundFact,seriesPresWorthFact,capRecoveryFact
 from tabulate import tabulate
+from engecon import *
+
 
 
 def main():
@@ -11,11 +12,11 @@ def main():
     'Sinking fund factor','Capital Recovery Factor','Uniform series compound amount factor',
     'Series present worth factor'])
     for i in range(1,compounds):
-        table.append([i,cmpAmtFact(interest,i),presWorthFact(interest,i),sinkFundFact(interest,i),capRecoveryFact(interest,i),uniSeriesCmpAmtFact(interest,i),seriesPresWorthFact(interest,i)])
+        table.append([i,cmpAmtFact(interest,i),presWorthFact(interest,i),sinkFundFact(interest,i),capRecoveryFact(interest,i),uniSeriesCmpAmtFact(interest,i),seriesPresWorthFact(interest,i),gradientUniSeriesFact(interest,i)])
     
     print(tabulate(table,headers=['compounding periods','Compound Amount Factor','Present Worth Factor',
     'Sinking fund factor','Capital Recovery Factor','Uniform series compound amount factor',
-    'Series present worth factor'],tablefmt="orgtbl"))
+    'Series present worth factor','arithmetic gradient uniform series factor'],tablefmt="orgtbl"))
 
 
 

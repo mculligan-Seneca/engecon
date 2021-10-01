@@ -31,4 +31,12 @@ def capRecoveryFact(interest,ncmpounds):
     return sinkFundFact(interest,ncmpounds)*cmpAmtFact(interest,ncmpounds)
 
 
+#Arithmatic gradient uniform series factor
+#(A/G,i,n)=[1/i-n/(1+i)^n-1]
+def gradientUniSeriesFact(interest,ncmpounds):
+    return (1/interest)-(ncmpounds/(cmpAmtFact(interest,ncmpounds)-1))
+
+
+
+
 
