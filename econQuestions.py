@@ -31,3 +31,19 @@ print(f'Present value of bond {bond_pv}')
 
 
 
+print("Question 3")
+#Atot=A'+G(A/G,i,n)
+#Pv=?
+#pv=[A'+g((A/G,i,n))](P/A,i,n)
+
+k=6
+g=50
+n=4#years
+aprime=500
+r=0.12
+m=12
+interest=((1+r/m)**k)-1 #effective interest
+atot=aprime+(g*gradientUniSeriesFact(interest,n*m/k))# 8 repair bills over 4 years
+pv=atot*seriesPresWorthFact(interest,n*m/k)
+
+print(f'Present worth of car is {pv}')
